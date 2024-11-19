@@ -69,9 +69,9 @@ VALUES
 (3, 'Shohajahon', 'Abdullayev', 1),
 (4, 'Diyor', 'Abdullayeva', 2),
 (5, 'Hushnud', 'Aliyev', 2);
-SELECT e1.first_name AS employee_name, e2.first_name AS manager_name
-FROM employees e1
-LEFT JOIN employees e2 ON e1.manager_id = e2.id;
+SELECT employees first_name AS employee_name, managers first_name AS manager_name
+FROM employees
+LEFT JOIN employees AS managers ON employees manager_id = managers id
 CREATE TABLE actors (
     actor_id INT PRIMARY KEY,
     actor_name VARCHAR(100)
